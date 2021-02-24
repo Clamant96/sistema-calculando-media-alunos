@@ -28,13 +28,13 @@ public class TabelaMedias {
 				
 				matriz[linha][coluna] = nome;
 
-				if(coluna >= 1 && coluna <= 4){
+				if(coluna >= 1 && coluna < (matriz[linha].length - 1)){
 					System.out.print("Nota "+ (coluna) +": ");
 					nota = entradaString.nextLine();
 					
 					matriz[linha][coluna] = nota;
 
-				}else if(coluna == 5){
+				}else if(coluna == (matriz[linha].length - 1)){
 					for(int j = 1; j < matriz[linha].length; j++){
 						
 						if(j <= 4 ){
@@ -59,10 +59,18 @@ public class TabelaMedias {
 				switch(j){
 					case 0:
 						System.out.println("Nome: "+ matriz[i][j]);
+						
+						for(int k = 1; k < matriz[i].length - 1; k++) {
+							System.out.println("Nota "+ k +": "+ matriz[i][k]);
+						}
+						
 					break;
 
 					case 5:
 						System.out.println("Media: "+ matriz[i][j]);
+						
+						System.out.println("");
+						
 					break;
 
 				}
